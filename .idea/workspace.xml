@@ -12,16 +12,11 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7317f425-3330-4f7a-a40b-6256d8a54bf4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/advent_2020.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bin/day_one.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bin/day_two.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bin/split_lab.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/expenses.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/passwords.txt" afterDir="false" />
+    <list default="true" id="7317f425-3330-4f7a-a40b-6256d8a54bf4" name="Default Changelist" comment="First commit.&#10;Day one and two completed and working.">
+      <change afterPath="$PROJECT_DIR$/src/bin/day_three.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/forest_map.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/passports.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,10 +58,22 @@
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="settings.editor.selected.configurable" value="inlay.hints" />
   </component>
-  <component name="RunManager" selected="Cargo.Day Two">
+  <component name="RunManager" selected="Cargo.Day Three">
     <configuration name="Day One" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="channel" value="DEFAULT" />
       <option name="command" value="run --package advent_2020 --bin day_one .\\src\\data\\expenses.txt" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day Three" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="run --package advent_2020 --bin day_three .\\src\\data\\forest_map.txt" />
       <option name="allFeatures" value="false" />
       <option name="emulateTerminal" value="false" />
       <option name="backtrace" value="SHORT" />
@@ -120,9 +127,11 @@
       <item itemvalue="Cargo.Day One" />
       <item itemvalue="Cargo.Day Two" />
       <item itemvalue="Cargo.Run split_lab" />
+      <item itemvalue="Cargo.Day Three" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.Day Three" />
         <item itemvalue="Cargo.Day Two" />
         <item itemvalue="Cargo.Run split_lab" />
       </list>
@@ -139,8 +148,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607029785711</updated>
-      <workItem from="1607029787643" duration="26462000" />
+      <workItem from="1607029787643" duration="46883000" />
     </task>
+    <task id="LOCAL−00001" summary="First commit.&#10;Day one and two completed and working.">
+      <created>1607388797744</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1607388797744</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,5 +175,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="First commit.&#10;Day one and two completed and working." />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit.&#10;Day one and two completed and working." />
   </component>
 </project>
