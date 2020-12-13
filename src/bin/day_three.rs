@@ -1,8 +1,29 @@
 use std::{fs, env};
+use std::ops::AddAssign;
 
-static JUMP_SIZE: (u32, u32) = (3, 1);
+struct Size {
+    width: u32,
+    height: u32,
+}
 
-fn load_map(filename: &String) -> ((u32, u32), Vec<bool>) {
+struct Map {
+    data: Vec<bool>,
+    size: Size,
+}
+
+struct Point {
+    x: u32,
+    y: u32,
+}
+
+impl AddAssign<&Size> for Point {
+    fn add_assign(&mut self, other: &Size) {
+        self.x += other.width;
+        self.y += other.height;
+    }
+}
+
+fn load_map(filename: &String) -> Map {
     let data = fs::read_to_string(filename).expect("Failed to load map from file.");
     let mut height = 0;
     let width = data
@@ -12,55 +33,45 @@ fn load_map(filename: &String) -> ((u32, u32), Vec<bool>) {
         .chars()
         .count() as u32;
 
-    let map = data
+    let data = data
         .lines()
         .flat_map(|x| {height += 1; x.chars()})
         .map(|x| x == '#')
         .collect();
 
-    ((width, height), map)
+    Map{data, size: Size{ width, height}}
 }
 
-// fn display_map(map: &Vec<bool>, width: u32) {
-//     let mut counter = 0;
-//     for current in map.iter() {
-//         if counter >= width {
-//             println!();
-//             counter = 0;
-//         }
-//
-//         print!("{}", if *current {'#'} else {'.'});
-//         counter += 1;
-//     }
-// }
-
-fn trees_for_slope(map: &Vec<bool>, map_size: &(u32, u32), slope: &(u32, u32)) -> u32 {
+fn trees_for_slope(map: &Map, slope: &Size) -> u32 {
     let mut tree_count = 0;
-    let mut position: (u32, u32) = (0, 0);
+    let mut position = Point { x: 0, y: 0 };
 
-    while position.1 < map_size.1 {
-        let index = (position.1 * map_size.0 + position.0 % map_size.0) as usize;
-        tree_count += if map[index] { 1 } else { 0 };
-        position.0 += slope.0;
-        position.1 += slope.1;
+    while position.y < map.size.height {
+        let index = (position.y * map.size.width + position.x % map.size.width) as usize;
+        tree_count += if map.data[index] { 1 } else { 0 };
+        position += slope;
     }
 
     tree_count
 }
 
 fn first(filename: &String) {
-    let (size, map) = load_map(filename);
+    let map = load_map(filename);
+    let slope = Size{width: 3, height: 1};
 
-    let tree_count = trees_for_slope(&map, &size, &JUMP_SIZE);
+    let tree_count = trees_for_slope(&map, &slope);
 
-    println!("First: Found {} trees for slope ({}, {}).", tree_count, JUMP_SIZE.0, JUMP_SIZE.1);
+    println!("First: Found {} trees for slope ({}, {}).", tree_count, slope.width, slope.height);
 }
 
 fn second(filename: &String) {
-    let (size, map) = load_map(filename);
-    let slopes = vec![(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)];
-    let tree_counts: Vec<u64> = slopes.iter().map(|x| trees_for_slope(&map, &size, x) as u64).collect();
-    let product = tree_counts.iter().fold(1, |acc, x| acc * x);
+    let map = load_map(filename);
+    let slopes: Vec<Size> = vec![Size{ width: 1, height: 1},
+                                 Size{ width: 2, height: 1},
+                                 Size{ width: 4, height: 1},
+                                 Size{ width: 6, height: 1},
+                                 Size{ width: 0, height: 2}];
+    let product: u64 = slopes.iter().map(|x| trees_for_slope(&map, x) as u64).product();
 
     println!("Second: The product of encountered trees for slopes is {}.", product)
 }
