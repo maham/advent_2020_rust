@@ -12,25 +12,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7317f425-3330-4f7a-a40b-6256d8a54bf4" name="Default Changelist" comment="First commit.&#10;Day one and two completed and working.">
-      <change afterPath="$PROJECT_DIR$/data/bag_rules.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/bootcode.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bin/day_eight.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bin/day_seven.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bin/day_five.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/day_five.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bin/day_four.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/day_four.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bin/day_one.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/day_one.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bin/day_six.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/day_six.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bin/day_three.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/day_three.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bin/day_two.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/day_two.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/boarding_passes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/boarding_passes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/customs_declarations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/customs_declarations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/expenses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/expenses.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/forest_map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/forest_map.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/passports.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/passports.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/passwords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/passwords.txt" afterDir="false" />
-    </list>
+    <list default="true" id="7317f425-3330-4f7a-a40b-6256d8a54bf4" name="Default Changelist" comment="First commit.&#10;Day one and two completed and working." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +58,7 @@
       <recent name="C:\Users\martin.hammarbrink\CLionProjects\rust\advent_2020" />
     </key>
   </component>
-  <component name="RunManager" selected="Cargo.Day Eight (release)">
+  <component name="RunManager" selected="Cargo.Day Five (release)">
     <configuration name="Day Eight (release)" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="run --release --package advent_2020 --bin day_eight .\\data\\bootcode.txt" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -93,6 +75,20 @@
     </configuration>
     <configuration name="Day Eight" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="run --package advent_2020 --bin day_eight .\\data\\bootcode.txt" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="channel" value="DEFAULT" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day Five (release)" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="command" value="run --release --package advent_2020 --bin day_five .\\data\\boarding_passes.txt" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <option name="channel" value="DEFAULT" />
       <option name="allFeatures" value="false" />
@@ -217,18 +213,15 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="Cargo.Day One" />
       <item itemvalue="Cargo.Day Two" />
       <item itemvalue="Cargo.Day Three" />
       <item itemvalue="Cargo.Day Four" />
       <item itemvalue="Cargo.Day Five" />
       <item itemvalue="Cargo.Day Seven" />
       <item itemvalue="Cargo.Day Eight" />
+      <item itemvalue="Cargo.Day Five (release)" />
       <item itemvalue="Cargo.Day Six (release)" />
       <item itemvalue="Cargo.Day Seven (release)" />
       <item itemvalue="Cargo.Day Eight (release)" />
@@ -248,7 +241,8 @@
       <updated>1607029785711</updated>
       <workItem from="1607029787643" duration="101169000" />
       <workItem from="1607814556702" duration="65930000" />
-      <workItem from="1608201864111" duration="29443000" />
+      <workItem from="1608201864111" duration="29737000" />
+      <workItem from="1608297127597" duration="1503000" />
     </task>
     <task id="LOCAL−00001" summary="First commit.&#10;Day one and two completed and working.">
       <created>1607388797744</created>
@@ -262,7 +256,19 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1608056300918</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="Day 8 complete">
+      <created>1608296992559</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1608296992559</updated>
+    </task>
+    <task id="LOCAL−00004" summary="Added a second version of 5:2">
+      <created>1608298608871</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1608298608871</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,6 +290,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First commit.&#10;Day one and two completed and working." />
     <MESSAGE value="Day six complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day six complete" />
+    <MESSAGE value="Day 8 complete" />
+    <MESSAGE value="Added a second version of 5:2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a second version of 5:2" />
   </component>
 </project>
