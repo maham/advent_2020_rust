@@ -1,6 +1,5 @@
 use std::{env, fs};
 use itertools::Itertools;
-use time;
 use time::OffsetDateTime;
 
 fn first(data: &str) {
@@ -43,3 +42,4 @@ fn main() {
     println!("Second time: {}ms", (after_second - after_first).as_seconds_f64() * 1000.0);
     println!("Total time: {}ms", (after_second - before_first).as_seconds_f64() * 1000.0);
 }
+

@@ -2,32 +2,32 @@ use std::{fs, env};
 
 static TARGET_VALUE: u32 = 2020;
 
-fn load_expenses(filename: &String) -> Vec<u32> {
+fn load_expenses(filename: &str) -> Vec<u32> {
     let mut expenses: Vec<u32> = fs::read_to_string(filename)
         .expect("Heck.")
         .lines()
         .map(|x| x.parse().expect("Failed to parse expense as u32"))
         .collect();
 
-    expenses.sort();
+    expenses.sort_unstable();
 
     expenses
 }
 
-fn find_two_combo(expenses: &Vec<u32>) -> Option<(u32, u32)> {
+fn find_two_combo(expenses: &[u32]) -> Option<(u32, u32)> {
     for first_index in 0..expenses.len()  {
         let first_value = expenses[first_index];
         let diff = TARGET_VALUE - first_value;
 
-        if let Result::Ok(_) = expenses[first_index+1..].binary_search(&diff) {
+        if expenses[first_index+1..].binary_search(&diff).is_ok() {
             return Some((first_value, diff))
         }
     }
 
-    return None
+    None
 }
 
-fn first(filename: &String) {
+fn first(filename: &str) {
     let expenses = load_expenses(filename);
 
     if let Some((first_value, second_value)) = find_two_combo(&expenses) {
@@ -38,7 +38,7 @@ fn first(filename: &String) {
     }
 }
 
-fn find_three_combo(expenses: &Vec<u32>) -> Option<(u32, u32, u32)> {
+fn find_three_combo(expenses: &[u32]) -> Option<(u32, u32, u32)> {
     for first_index in 0..expenses.len() {
         let first_value = expenses[first_index];
 
@@ -50,16 +50,16 @@ fn find_three_combo(expenses: &Vec<u32>) -> Option<(u32, u32, u32)> {
             }
 
             let diff = TARGET_VALUE - sum;
-            if let Result::Ok(_) = expenses[first_index + 1 ..].binary_search(&diff) {
+            if expenses[first_index + 1 ..].binary_search(&diff).is_ok() {
                 return Some((first_value, second_value, diff));
             }
         }
     }
 
-    return None;
+    None
 }
 
-fn second(filename: &String) {
+fn second(filename: &str) {
     let expenses = load_expenses(filename);
 
     if let Some((first_value, second_value, third_value)) = find_three_combo(&expenses) {

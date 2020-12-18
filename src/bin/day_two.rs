@@ -33,7 +33,7 @@ fn get_int(data: &str, separator: char) -> (u32, &str) {
     }
 }
 
-fn load_passwords(filename: &String) -> Vec<PasswordRow> {
+fn load_passwords(filename: &str) -> Vec<PasswordRow> {
     fs::read_to_string(filename)
         .expect("Failed to load passwords from file.")
         .lines()
@@ -52,14 +52,13 @@ fn test_password_first(password: &PasswordRow) -> bool {
     password.min <= counter && counter <= password.max
 }
 
-fn first(filename: &String) {
+fn first(filename: &str) {
     let passwords = load_passwords(filename);
 
     let num_valid_passwords: usize = passwords
         .iter()
         .filter(|x| test_password_first(x))
-        .collect::<Vec<&PasswordRow>>()
-        .len();
+        .count();
 
     println!("Found {} valid passwords on first search.", num_valid_passwords);
 }
@@ -75,14 +74,13 @@ fn test_password_second(p: &PasswordRow) -> bool {
     matches == 1
 }
 
-fn second(filename: &String) {
+fn second(filename: &str) {
     let passwords = load_passwords(filename);
 
     let num_valid_passwords: usize = passwords
         .iter()
         .filter(|x| test_password_second(x))
-        .collect::<Vec<&PasswordRow>>()
-        .len();
+        .count();
 
     println!("Found {} valid passwords on second search.", num_valid_passwords);
 }

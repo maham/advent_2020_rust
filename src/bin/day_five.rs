@@ -5,25 +5,19 @@ fn parse_row(s: &str) -> u32 {
     let mut row = 0;
 
     for (i, c) in s.chars().enumerate() {
-        match c {
-            'B' => row += 64 >> i,
-            _ => ()
-        }
+        if let 'B' = c { row += 64 >> i }
     }
 
-    return row
+    row
 }
 
 fn parse_col(s: &str) -> u32 {
     let mut col = 0;
     for (i, c) in s.chars().enumerate() {
-        match c {
-            'R' => col += 4 >> i,
-            _ => ()
-        }
+        if let 'R' = c { col += 4 >> i }
     }
 
-    return col
+    col
 }
 
 fn get_pass_id(s: &str) -> u32 {
@@ -33,7 +27,7 @@ fn get_pass_id(s: &str) -> u32 {
     row * 8 + col
 }
 
-fn first(boarding_passes: &Vec<&str>) {
+fn first(boarding_passes: &[&str]) {
     let mut highest = 0;
     for pass in boarding_passes {
         let id = get_pass_id(pass);
@@ -45,7 +39,7 @@ fn first(boarding_passes: &Vec<&str>) {
     println!("First: Highest boarding pass id is {}", highest)
 }
 
-fn second(boarding_passes: &Vec<&str>) {
+fn second(boarding_passes: &[&str]) {
     let ids: Vec<usize> = boarding_passes.iter().map(|x| get_pass_id(x) as usize).sorted().collect();
     let first_id = ids[0];
 

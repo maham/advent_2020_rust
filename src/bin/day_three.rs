@@ -23,7 +23,7 @@ impl AddAssign<&Size> for Point {
     }
 }
 
-fn load_map(filename: &String) -> Map {
+fn load_map(filename: &str) -> Map {
     let data = fs::read_to_string(filename).expect("Failed to load map from file.");
     let mut height = 0;
     let width = data
@@ -55,7 +55,7 @@ fn trees_for_slope(map: &Map, slope: &Size) -> u32 {
     tree_count
 }
 
-fn first(filename: &String) {
+fn first(filename: &str) {
     let map = load_map(filename);
     let slope = Size{width: 3, height: 1};
 
@@ -64,7 +64,7 @@ fn first(filename: &String) {
     println!("First: Found {} trees for slope ({}, {}).", tree_count, slope.width, slope.height);
 }
 
-fn second(filename: &String) {
+fn second(filename: &str) {
     let map = load_map(filename);
     let slopes: Vec<Size> = vec![Size{ width: 1, height: 1},
                                  Size{ width: 2, height: 1},

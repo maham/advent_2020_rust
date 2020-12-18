@@ -2,7 +2,7 @@ use std::{fs, env};
 use itertools::Itertools;
 use std::collections::HashMap;
 
-fn first(passports: &Vec<HashMap<&str,&str>>) {
+fn first(passports: &[HashMap<&str,&str>]) {
     let mut counter = 0;
     for passport in passports {
         let num_fields = passport.len();
@@ -51,7 +51,7 @@ fn is_hcl_valid(hair_color: &str) -> bool {
         return false
     }
 
-    if !hair_color.starts_with("#") {
+    if !hair_color.starts_with('#') {
         return false
     }
 
@@ -63,10 +63,7 @@ fn is_hcl_valid(hair_color: &str) -> bool {
 }
 
 fn is_ecl_valid(eye_color: &str) -> bool {
-    match eye_color {
-        "amb" | "blu" | "brn" | "gry" | "grn" | "hzl" | "oth" => true,
-        _ => false
-    }
+    matches!(eye_color, "amb" | "blu" | "brn" | "gry" | "grn" | "hzl" | "oth")
 }
 
 fn is_pid_valid(passport_id: &str) -> bool {
@@ -81,7 +78,7 @@ fn is_pid_valid(passport_id: &str) -> bool {
     true
 }
 
-fn second(passports: &Vec<HashMap<&str, &str>>) {
+fn second(passports: &[HashMap<&str, &str>]) {
     let mut counter = 0;
 
     for passport in passports {
@@ -135,7 +132,7 @@ fn main() {
         .map(|x| {
             x.split_whitespace()
                 .filter(|y| !y.trim().starts_with("cid"))
-                .flat_map(|z| z.split(":").tuples()
+                .flat_map(|z| z.split(':').tuples()
                 ).collect()
         })
         .collect();
