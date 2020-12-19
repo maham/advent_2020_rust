@@ -4,7 +4,7 @@ use time::OffsetDateTime;
 
 fn first(data: &str) {
     let group_answers: Vec<String> = data.split("\r\n\r\n")
-        .map(|x| x.chars().unique().filter(|z| z.is_alphabetic() ).collect())
+        .map(|x| x.chars().filter(|z| z.is_alphabetic()).unique().collect())
         .collect();
     let answer_counts: u32 = group_answers.iter().map(|x| x.len() as u32).sum();
     println!("Total answers: {}", answer_counts);

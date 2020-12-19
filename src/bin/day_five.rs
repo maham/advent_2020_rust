@@ -1,40 +1,31 @@
 use std::{fs, env};
 use itertools::Itertools;
 use time::OffsetDateTime;
+use std::cmp::max;
 
-fn parse_row(s: &str) -> u32 {
-    let mut row = 0;
-
-    for (i, c) in s.chars().enumerate() {
-        if let 'B' = c { row += 64 >> i }
-    }
-
-    row
+fn parse_row(s: &str) -> usize {
+    s.chars()
+        .enumerate()
+        .map(|(i, c)| if c == 'B' { 64 >> i } else { 0 })
+        .sum()
 }
 
-fn parse_col(s: &str) -> u32 {
-    let mut col = 0;
-    for (i, c) in s.chars().enumerate() {
-        if let 'R' = c { col += 4 >> i }
-    }
-
-    col
+fn parse_col(s: &str) -> usize {
+    s.chars()
+        .enumerate()
+        .map(|(i, c)| if c == 'R' { 4 >> i } else { 0 })
+        .sum()
 }
 
 fn get_pass_id(s: &str) -> usize {
-    let row = parse_row(&s[..7]) as usize;
-    let col = parse_col(&s[7..]) as usize;
-
-    row * 8 + col
+    parse_row(&s[..7]) * 8 + parse_col(&s[7..])
 }
 
 fn first(boarding_passes: &[&str]) {
     let mut highest = 0;
     for pass in boarding_passes {
         let id = get_pass_id(pass);
-        if id > highest {
-            highest = id;
-        }
+        highest = max(id, highest);
     }
 
     println!("First: Highest boarding pass id is {}", highest)
@@ -58,9 +49,11 @@ fn second2(boarding_passes: &[&str]) {
         let id = get_pass_id(pass) as usize;
         found[id] = true;
     }
+
     let mut i = 0;
     while !found[i] { i += 1 }
     while found[i] { i += 1 }
+
     println!("Second2: Your seat id is {}", i);
 
 }

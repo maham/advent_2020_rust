@@ -12,7 +12,14 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7317f425-3330-4f7a-a40b-6256d8a54bf4" name="Default Changelist" comment="First commit.&#10;Day one and two completed and working." />
+    <list default="true" id="7317f425-3330-4f7a-a40b-6256d8a54bf4" name="Default Changelist" comment="First commit.&#10;Day one and two completed and working.">
+      <change afterPath="$PROJECT_DIR$/data/bootcode_big.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xmas_data.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bin/day_nine.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bin/day_five.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/day_five.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bin/day_six.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/day_six.rs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +65,12 @@
       <recent name="C:\Users\martin.hammarbrink\CLionProjects\rust\advent_2020" />
     </key>
   </component>
-  <component name="RunManager" selected="Cargo.Day Five (release)">
+  <component name="RunManager" selected="Cargo.Day Nine (release)">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Day Eight (release)" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="run --release --package advent_2020 --bin day_eight .\\data\\bootcode.txt" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -117,6 +129,20 @@
     </configuration>
     <configuration name="Day Four" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="run --package advent_2020 --bin day_four .\\data\\passports.txt" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="channel" value="DEFAULT" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day Nine (release)" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="command" value="run --release --package advent_2020 --bin day_nine .\\data\\xmas_data.txt" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <option name="channel" value="DEFAULT" />
       <option name="allFeatures" value="false" />
@@ -225,6 +251,7 @@
       <item itemvalue="Cargo.Day Six (release)" />
       <item itemvalue="Cargo.Day Seven (release)" />
       <item itemvalue="Cargo.Day Eight (release)" />
+      <item itemvalue="Cargo.Day Nine (release)" />
     </list>
   </component>
   <component name="RustProjectSettings">
@@ -242,7 +269,7 @@
       <workItem from="1607029787643" duration="101169000" />
       <workItem from="1607814556702" duration="65930000" />
       <workItem from="1608201864111" duration="29737000" />
-      <workItem from="1608297127597" duration="1503000" />
+      <workItem from="1608297127597" duration="16230000" />
     </task>
     <task id="LOCAL−00001" summary="First commit.&#10;Day one and two completed and working.">
       <created>1607388797744</created>
@@ -268,7 +295,13 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1608298608871</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="Added a second version of 5:2">
+      <created>1608298650046</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1608298650046</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
